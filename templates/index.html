@@ -6,34 +6,45 @@
   <!-- Make it compatible to mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skin Cancer Lesion Classifier</title>
- 
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com">
   
 </head>
+ <style>
+ *{ margin: 0; padding:0 ; box-sizing :border-sizing;
+   font-family: 'Josefin Sans', sans-serif; }
+ </style>
+<!--
+<body style="background: #010B30;"> 
+-->
+<body>
+ <div class="holder">
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third"></div>
+    <div class="txt"> 
+ 
 
 
-<body style="background: #000;">
-
-<h2 style="color:Violet;">Skin Cancer Lesion Classifier</h2><p>
-<h4 style="color:Violet;">Upload an image and click submit</h4>
+<h1 style="text-align:center">Skin Cancer Lesion Classifier</h1><p>
+<h6 style=>Upload Image </h6>
 
 
 <form method="post" action="/" enctype="multipart/form-data">
     <dl>
-	<p style="color:Violet;">
-		<input type="file" name="file" autocomplete="off" required>
-	</p>
+<!--
+	<p style="color:Violet;"><input type="file" name="file" autocomplete="off" required></p>
+-->
+    <p style="color:Violet;"><input type="file" name="file" autocomplete="off"></p>
     </dl>
-    <p style="color:Violet;">
-	<input type="submit" name="submit" value="Submit">
-    </p>
+    <p>	<input class="button"  type="submit" name="submit" value="Upload"> </p>
 </form>
-
-
 
 <p style="color:MediumSeaGreen;">
 	{% with messages = get_flashed_messages() %}
 	  {% if messages %}
-        Diagnosis for the following image is: <u><h3 style="color:MediumSeaGreen;">{{ messages[0] }}</h3></u><br>
+        Diagnosis for this image is: <u><h3 style="color:MediumSeaGreen;">{{ messages[0] }}</h3></u><br>
         <img src="{{ messages[1] }}" width="300", height="225">
        
 	  {% endif %}
@@ -41,7 +52,9 @@
 </p>
 
 
+</div>	
 
+</div>
 </body>
 
 
